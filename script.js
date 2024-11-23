@@ -12,7 +12,7 @@ function loadPage(page) {
             return response.text();
         })
         .then(content => {
-            document.getElementById('content').innerHTML = marked(content);
+            document.getElementById('content').innerHTML = marked.parse(content);
         })
         .catch(error => {
             document.getElementById('content').innerHTML = 'Error loading page.';
