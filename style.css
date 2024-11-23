@@ -1,9 +1,12 @@
+/* Base styles (light mode) */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 header {
@@ -23,11 +26,15 @@ nav {
   width: 200px;
   padding: 1rem;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 nav ul li {
@@ -37,15 +44,53 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: #333;
-  display: block;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+#dark-mode-toggle {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: auto; /* Pushes the button to the bottom */
+  text-align: center;
+  border-radius: 4px;
+}
+
+#dark-mode-toggle:hover {
+  background: #444;
 }
 
 main {
   flex: 1;
   padding: 1rem;
   overflow-y: auto;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode header {
+  background: #222;
+}
+
+body.dark-mode nav {
+  background: #333;
+  color: #ffffff;
+}
+
+body.dark-mode nav ul li a {
+  color: #ffffff;
+}
+
+body.dark-mode #dark-mode-toggle {
+  background: #ddd;
+  color: #333;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+  background: #ccc;
 }
