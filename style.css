@@ -91,16 +91,16 @@ main {
 
 /* Dark mode styles */
 body.dark-mode {
-  background-color: #121212; /* Dark background for the entire body */
+  background-color: #27262b; /* Dark background for the entire body */
   color: #ffffff; /* White text in dark mode */
 }
 
 body.dark-mode header {
-  background: #222; /* Dark background for the header in dark mode */
+  background: #27262b; /* Dark background for the header in dark mode */
 }
 
 body.dark-mode nav {
-  background: #333; /* Dark background for navigation */
+  background: #27262b; /* Dark background for navigation */
   color: #ffffff; /* White text in the navigation */
 }
 
@@ -109,7 +109,7 @@ body.dark-mode nav ul li a {
 }
 
 body.dark-mode main {
-  background-color: #1e1e1e; /* Dark background for the main content */
+  background-color: #27262b; /* Dark background for the main content */
 }
 
 body.dark-mode #dark-mode-toggle {
