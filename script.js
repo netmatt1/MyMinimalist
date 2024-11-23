@@ -1,7 +1,7 @@
 // Function to load the content of a markdown page
 function loadPage(page) {
     // Set the file path to the 'pages' folder, assuming the files are in 'pages' and have .md extension
-    var filePath = 'pages/' + page + '.md';
+    var filePath = 'pages/' + page;
 
     // Fetch the Markdown file from the specified path
     fetch(filePath)
@@ -41,7 +41,21 @@ toggleButton.addEventListener('click', function () {
     }
 });
 
+// Handle navigation link clicks
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        // Prevent default link behavior
+        event.preventDefault();
+
+        // Get the page name from the 'data-page' attribute
+        const page = this.getAttribute('data-page');
+
+        // Load the page content
+        loadPage(page);
+    });
+});
+
 // Load the default page when the site is loaded
 window.onload = function() {
-    loadPage('home'); // Adjust 'home' to your default page filename (e.g., 'index' or 'home')
+    loadPage('home.md'); // Adjust 'home.md' to your default page filename (e.g., 'index' or 'home')
 };
