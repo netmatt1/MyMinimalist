@@ -20,6 +20,29 @@ function loadPage(page) {
         });
 }
 
+// Dark Mode Toggle functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('dark-mode-toggle');
+
+    // Check if dark mode is enabled in localStorage
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Event listener for the dark mode toggle button
+    toggleButton.addEventListener('click', function () {
+        console.log('Dark mode toggle clicked'); // Debug message
+        document.body.classList.toggle('dark-mode');
+
+        // Store the current dark mode state in localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.removeItem('darkMode');
+        }
+    });
+});
+
 // Handle navigation link clicks
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(event) {
