@@ -21,7 +21,7 @@ header {
   max-width: 1200px; /* Max width for the header */
   margin: 0 auto; /* Center the header horizontally */
   box-sizing: border-box; /* Include padding in the width calculation */
-  border-bottom: 1px solid #ccc; /* Border color between header and content sections */
+  border-bottom: 1px solid #1px solid #44434d; /* Border color between header and content sections */
 }
 
 /* Container that holds the navigation and main content */
@@ -42,7 +42,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-right: 1px solid #ccc; /* Border color between navigation and content */
+  border-right: 1px solid #1px solid #44434d; /* Border color between navigation and content */
 }
 
 /* Styles for the list in the navigation */
@@ -86,7 +86,7 @@ main {
   padding: 1rem;
   overflow-y: auto;
   background-color: #ffffff; /* White background for the main content */
-  border-left: 1px solid #ccc; /* Border color between content and navigation */
+  /*border-left: 1px solid #ccc; /* Border color between content and navigation */*/
 }
 
 /* Dark mode styles */
