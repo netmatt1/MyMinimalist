@@ -23,3 +23,22 @@ document.querySelectorAll('nav a').forEach(link => {
 
 // Load the default page (Home) on initial load
 loadPage('home.md');
+
+// Dark Mode Toggle
+const toggleButton = document.getElementById('dark-mode-toggle');
+toggleButton.addEventListener('click', () => {
+  // Toggle the dark-mode class on the body
+  document.body.classList.toggle('dark-mode');
+
+  // Save preference in localStorage
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+});
+
+// Load Dark Mode preference on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const darkMode = localStorage.getItem('darkMode');
+  if (darkMode === 'enabled') {
+    document.body.classList.add('dark-mode');
+  }
+});
