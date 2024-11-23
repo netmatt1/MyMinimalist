@@ -1,24 +1,27 @@
 // Function to load the content of a markdown page
 function loadPage(page) {
-    // Set the file path to the 'pages' folder, assuming the files are in 'pages' and have .md extension
     var filePath = 'pages/' + page;
+
+    console.log('Loading page:', filePath);  // Log the file being loaded
 
     // Fetch the Markdown file from the specified path
     fetch(filePath)
         .then(response => {
+            console.log('Response status:', response.status); // Log the response status
             if (!response.ok) {
                 throw new Error('Page not found');
             }
             return response.text();
         })
         .then(content => {
-            // Use the 'marked' library to convert Markdown to HTML
+            // Convert the Markdown to HTML using the 'marked' library
             document.getElementById('content').innerHTML = marked(content);
+            console.log('Content loaded and converted successfully');
         })
         .catch(error => {
             // Handle errors if the page couldn't be loaded
             document.getElementById('content').innerHTML = 'Error loading page.';
-            console.error(error);
+            console.error('Error loading page:', error);  // Log the error
         });
 }
 
@@ -57,5 +60,5 @@ document.querySelectorAll('nav a').forEach(link => {
 
 // Load the default page when the site is loaded
 window.onload = function() {
-    loadPage('home.md'); // Now references the pages folder explicitly
+    loadPage('home.md');  // Now references the pages folder and .md files
 };
