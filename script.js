@@ -57,5 +57,5 @@ document.querySelectorAll('nav a').forEach(link => {
 
 // Load the default page when the site is loaded
 window.onload = function() {
-    loadPage('home.md'); // Adjust 'home.md' to your default page filename (e.g., 'index' or 'home')
+    loadPage('home.md'); // Now references the pages folder explicitly
 };
