@@ -17,6 +17,7 @@ header {
   width: 100%; /* Full width of the body */
   max-width: 1200px; /* Same width as the container */
   margin: 0 auto; /* Center the header horizontally */
+  box-sizing: border-box; /* Include padding in the width calculation */
   border-bottom: 1px solid #ccc; /* Border color between sections */
 }
 
